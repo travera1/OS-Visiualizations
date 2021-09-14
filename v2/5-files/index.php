@@ -40,35 +40,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-info navbar-dark">
-        <a class="navbar-brand" href="http://cs.newpaltz.edu/p/s21-06/">OS Visualizations</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-        <ul class="navbar-nav mr-left">
-         </ul>
-      
-         <ul class = "navbar-nav mr-right"> 
-            <li class="nav-item">
-              <a class="nav-link" href="http://cs.newpaltz.edu/p/s21-06/2-replace/index.html">Page Replacement</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://cs.newpaltz.edu/p/s21-06/4-memory/index.html">Memory Allocation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://cs.newpaltz.edu/p/s21-06/1-cpu/index.html">CPU Scheduling</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://cs.newpaltz.edu/p/s21-06/3-disk/index.html">Disk Scheduling</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://cs.newpaltz.edu/p/s21-06/5-files/index.html">File Allocation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://cs.newpaltz.edu/p/s21-06/6-address/index.html">Address Translation</a>
-            </li>
-         </ul>
-       </div>
-      </nav>
+    <?php include '../templates/navbar.php'; ?>
 
     <br>
     <div class="d-flex align-items-center justify-content-center">

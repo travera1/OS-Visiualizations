@@ -38,38 +38,7 @@
 
 <div class = "bg">
 
-<nav class="navbar navbar-expand-sm bg-info navbar-dark">
-  <a class="navbar-brand" href="http://cs.newpaltz.edu/p/s21-06/">OS Visualizations</a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-  <ul class="navbar-nav mr-left">
-   </ul>
-
-   <ul class = "navbar-nav mr-right"> 
-      <li class="nav-item">
-        <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v2/2-replace/index.html">Page Replacement</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v2/4-memory/index.html">Memory Allocation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v2/1-cpu/index.html">CPU Scheduling</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v2/3-disk/index.html">Disk Scheduling</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v2/5-files/index.html">File Allocation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v2/6-address/AddressTranslation.html">Address Translation</a>
-      </li>
-
-   </ul>
- </div>
-</nav>
-
-
+<?php include '../templates/navbar.php'; ?>
 
 <div class="container p-3 my-3 border bg-light rounded">
 	<div class = "pt-3 pr-3 pl-3">
@@ -219,7 +188,7 @@
              <p>
                 Visualizations for our Page Replacement Algorithms.
             </p>
-            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/s21-06/2-replace/index.html" style="float: right;">Page Replacement</a>
+            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/f21-13/v2/2-replace/index.html" style="float: right;">Page Replacement</a>
  	 </div>
 	</div>
 
@@ -231,7 +200,7 @@
              <p>
                 Visualizations for our CPU Scheduling Algorithms.
             </p>
-            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/s21-06/1-cpu/index.html" style="float: right;">CPU Scheduling</a>
+            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/f21-13/v2/1-cpu/index.html" style="float: right;">CPU Scheduling</a>
  	 </div>
 	</div>
 
@@ -245,7 +214,7 @@
              <p>
                 Visualizations for our Disk Scheduling Algorithms.
             </p>
-            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/s21-06/3-disk/index.html" style="float: right;">Disk Scheduling</a>
+            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/f21-13/v2/3-disk/index.html" style="float: right;">Disk Scheduling</a>
  	 </div>
 	</div>
 
@@ -257,7 +226,7 @@
              <p>
                 Visualizations for our Memory Allocation Algorithms.
             </p>
-            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/p/s21-06/4-memory/index.html" style="float: right;">Memory Allocation</a>
+            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/f21-13/v2/4-memory/index.html" style="float: right;">Memory Allocation</a>
  	 </div>
 	</div>
 
@@ -271,7 +240,7 @@
              <p>
                 Visualizations for our File Allocation Algorithms.
             </p>
-            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/p/s21-06/5-file/index.html" style="float: right;">File Allocation</a>
+            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/p/f21-13/v2/5-files/index.html" style="float: right;">File Allocation</a>
  	 </div>
 	</div>
 
@@ -283,7 +252,7 @@
              <p>
                 Visualizations for our Address Translations.
             </p>
-            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/s21-06/6-address/AddressTranslation.html" style="float: right;">Address Translation</a>
+            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/f21-13/v2/6-address/AddressTranslation.html" style="float: right;">Address Translation</a>
  	 </div>
 	</div>
 

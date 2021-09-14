@@ -71,37 +71,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-info navbar-dark">
-            <a class="navbar-brand" href="http://cs.newpaltz.edu/p/s21-06/">OS Visualizations</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
-          
-             <ul class = "navbar-nav mr-right"> 
-                <li class="nav-item">
-                  <a class="nav-link" href="../2-replace/index.html">Page Replacement</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../4-memory/index.html">Memory Allocation</a>
-                </li>
-                <li class="nav-item">
-                 <a class="nav-link" href="http://cs.newpaltz.edu/p/s21-06/1-cpu/index.html">CPU Scheduling</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../3-disk/index.html">Disk Scheduling</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../5-file/index.html">File Allocation</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../6-address/index.html">Address Binding</a>
-                  </li>
-             </ul>
-           </div>
-          </nav>
-
-   
-   
-   
+     <?php include '../templates/navbar.php'; ?>
 <style type="text/css">
 #slideshow {
   margin: 50px auto;

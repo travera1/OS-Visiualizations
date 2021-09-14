@@ -51,6 +51,9 @@
   </style>
 </head>
 <body>
+  
+  <?php include '../templates/employeeHeader.php'; ?>
+
   <div id="app">
     <div class="main">
       <h1>Address Translation</h1>

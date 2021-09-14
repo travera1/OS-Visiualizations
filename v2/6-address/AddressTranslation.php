@@ -51,6 +51,7 @@
   </style>
 </head>
 <body>
+  <?php include '../templates/navbar.php'; ?>
   <div id="app">
     <div class="main">
       <h1>Address Translation</h1>
