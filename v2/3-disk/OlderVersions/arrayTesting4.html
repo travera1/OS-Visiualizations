@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Testing</title>
+    <style>
+    .floatL{
+         float:left;
+    }
+    .floatR{
+         float:right;
+    }
+
+    .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    }
+
+    .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    }
+
+    canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color:white ;
+    }
+
+    body{
+        background-color:beige;
+    }
+
+    h1{
+        margin-left: 20%;
+        margin-right: 40%;
+    }
+    .errors{
+        float:right;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="center">
+        <h1>Disk Scheduling Algorithms</h1>
+        <table>
+            <tr>
+                <td> Select an Algorithm:</td>
+                <td><button type="button" id="FCFS" onclick="FCFS();">FCFS</button></td>
+                <td><button type="button" id="SSTF" onclick="SSTF();">SSTF </button></td>
+                <td><button type="button" id="SCAN" onclick="SCAN();">SCAN </button></td>
+                <td><button type="button" id="CSCAN" onclick="CSCAN();">CSCAN </button></td>
+                <td><button type="button" id="LOOK" onclick="LOOK();">LOOK </button></td>
+                <td><button type="button" id="CLOOK" onclick="CLOOK();">CLOOK </button></td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+
+        <p>Current Algorithm:</p>
+        <div class="algorithm" id='algorithm'></div>
+
+    <div class = "grid-container">
+
+    <div class="item1">
+        <table>
+            <tr>
+                <td>Array and Read/Write Head</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="inputtext" />
+                    <button type="button" id="add" onclick="addRecord();displayRecord();">Add</button>
+                    <div id='values'></div>
+                </td>
+                <td>
+                    <input type="text" id="inputtext2" />
+                    <button type="button" id="setHead" onclick="setHead();displayHead();">Head</button>
+                    <div id='head'></div>
+                </td>
+                <td>
+                    <b><p style="text-align: left;">Errors:</p></b>
+                    <div class="errors" id='errors'></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="item2">
+        <br>
+    <table>
+        <tr>
+            <td>Buttons</td>
+        </tr>
+        <tr>
+            <td><button type="button" id="Previous" onclick=" clearLine();">Previous</button></td>
+            <td><button type="button" id="Next" onclick="displayLine();">Next </button></td>
+            <td><button type="button" id="Play" onclick="">Play </button></td>
+            <td><button type="button" id="Pause" onclick="">Pause </button></td>
+            <td><button type="button" id="Start" onclick="clearAll();">Start </button></td>
+            <td><button type="button" id="End" onclick="displayAll();">End </button></td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    <canvas id="myCanvas" width="700" height="500" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+
+</div>
+
+<script>
+    values = [];
+    startvalues = [];
+    index = 0;
+    valuesCopy = values; 
+    head = 50;
+    SSTFindex = Number.MAX_VALUE;
+    verticalindex = 0;
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+
+    function Reset(){
+    //console.log("Start values: "+ startvalues);
+    console.log("Values: "+ startvalues);
+    values = [];
+    valuesCopy = [];
+    startvalues = [];
+    head = 50;
+    //console.log(startvalues);
+}
+
+function FCFS(){
+    console.log("Start values: "+ startvalues);
+    values = startvalues;
+    valuesCopy = startvalues;
+    //console.log(startvalues);
+}
+
+function SSTF(){
+    values = startvalues;
+    valuesCopy = startvalues;
+    newVals= [];
+    var currentVal = head;
+    varDiff = [];
+    for(var i = 0; i < values.length; i++)
+    {
+        varDiff = SSTFdiff(currentVal);
+        //console.log("varDiff: " + varDiff);
+        minIndex = findMin(varDiff);
+        //console.log(minIndex);
+            newVals[i] = values[minIndex];
+        //console.log(valuesCopy);
+        currentVal = valuesCopy[minIndex];
+        valuesCopy[minIndex] = null;
+        //console.log("CurrentVal: " +currentVal);
+    }
+    values = newVals;
+}
+function SSTFdiff(currentVal){
+    varDiff = [];
+    for(var i = 0; i < valuesCopy.length; i++){
+        varDiff[i] = Math.abs(valuesCopy[i] - currentVal);
+    }
+    return varDiff;
+}
+
+function findMin(varDiff){
+    var min = Number.MAX_VALUE;
+    for(var i = 0; i < varDiff.length; i++)
+    {
+        if(varDiff[i] < min)
+        {
+            min = varDiff[i];
+            minIndex = i;
+        }
+    }
+    return minIndex;
+}
+
+function SCAN(){
+    values = startvalues;
+    valuesCopy = startvalues;
+    newhead = head; 
+    vals1 = [];
+    vals2 = [];
+    //go left
+    while(newhead >= 0)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals1[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead--;
+    }
+
+    vals1 = vals1.filter(function () { return true });
+    vals1 = maxSort(vals1);
+    vals1.push(0);
+
+    while(newhead <= 700)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals2[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead++;
+    }
+    console.log("vals2: " + vals2);
+    //vals2 = vals2.filter(function () { return true });
+    console.log("vals2: " + vals2);
+    vals2 = minSort(vals2);
+    vals2.push(699);
+
+    console.log("vals2: " + vals2);
+    valuesCopy = [];
+    valuesCopy = vals1.concat(vals2);
+    //console.log("ValuesCopy: " + valuesCopy); 
+    values = valuesCopy.filter(function () { return true });
+    console.log("Values: " + values);
+}
+
+function CSCAN(){
+    values = startvalues;
+    valuesCopy = startvalues;
+    newhead = head; 
+    vals1 = [];
+    vals2 = [];
+    //go right
+    while(newhead <= 700)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals1[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead++;
+    }
+    //console.log("vals1: " + vals1);
+    vals1 = vals1.filter(function () { return true });
+    vals1 = minSort(vals1);
+    //console.log("vals1: " + vals1);
+
+    //go left
+    vals1.push(699);
+    vals1.push(0);
+
+    while(newhead >= 0)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals2[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead--;
+    }
+
+    //console.log("vals2: " + vals2);
+    vals2 = vals2.filter(function () { return true });
+    vals2 = minSort(vals2);
+    //console.log("vals2: " + vals2);
+
+    valuesCopy = [];
+    valuesCopy = vals1.concat(vals2);
+    //console.log("ValuesCopy: " + valuesCopy); 
+    values = valuesCopy.filter(function () { return true });
+    console.log("Values: " + values);
+}
+//  \/ \/ \/This is only working if the numbers have the same amount of digits and decimal places, I have no idea why this is the case...
+function minSort(arr)
+{
+    let n = arr.length; 
+        for (let i = 0; i < n-1; i++) {
+            for (let j = 0; j < n-i-1; j++) 
+            {
+                if (arr[j] > arr[j+1]) 
+                { 
+                    let temp = arr[j]; 
+                    arr[j] = arr[j+1]; 
+                    arr[j+1] = temp; 
+                } 
+            }
+        }
+    return arr;
+}
+// \/ \/ \/ This is only working if the numbers have the same amount of digits and decimal places, I have no idea why this is the case...
+function maxSort(arr)
+{
+    var n = arr.length; 
+        for (var i = 0; i < n-1; i++) {
+            for (var j = 0; j < n-i-1; j++) 
+            {
+                if (arr[j] < arr[j+1]) 
+                { 
+                    var temp = arr[j]; 
+                    arr[j] = arr[j+1]; 
+                    arr[j+1] = temp; 
+                } 
+            }
+        }
+    return arr;
+}
+
+function LOOK(){
+    values = startvalues;
+    valuesCopy = startvalues;
+    newhead = head; 
+    vals1 = [];
+    vals2 = [];
+    //go left
+    while(newhead >= 0)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals1[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead--;
+    }
+
+    vals1 = vals1.filter(function () { return true });
+    vals1 = maxSort(vals1);
+
+    while(newhead <= 700)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals2[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead++;
+    }
+    console.log("vals2: " + vals2);
+    //vals2 = vals2.filter(function () { return true });
+    console.log("vals2: " + vals2);
+    vals2 = minSort(vals2);
+
+    console.log("vals2: " + vals2);
+    valuesCopy = [];
+    valuesCopy = vals1.concat(vals2);
+    //console.log("ValuesCopy: " + valuesCopy); 
+    values = valuesCopy.filter(function () { return true });
+    console.log("Values: " + values);
+}
+
+function CLOOK(){
+    values = startvalues;
+    valuesCopy = startvalues;
+    newhead = head; 
+    vals1 = [];
+    vals2 = [];
+    //go right
+    while(newhead <= 700)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals1[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead++;
+    }
+    //console.log("vals1: " + vals1);
+    vals1 = vals1.filter(function () { return true });
+    vals1 = minSort(vals1);
+    //console.log("vals1: " + vals1);
+
+    //go left
+
+    while(newhead >= 0)
+    {
+        for(var i = 0; i < values.length; i++)
+        {
+            if(valuesCopy[i] == newhead)
+            {
+                vals2[i] = valuesCopy[i];
+                valuesCopy[i] = null;
+                //console.log("valuesCopy: " + valuesCopy);
+            }
+        }
+        newhead--;
+    }
+
+    //console.log("vals2: " + vals2);
+    vals2 = vals2.filter(function () { return true });
+    vals2 = minSort(vals2);
+    //console.log("vals2: " + vals2);
+
+    valuesCopy = [];
+    valuesCopy = vals1.concat(vals2);
+    //console.log("ValuesCopy: " + valuesCopy); 
+    values = valuesCopy.filter(function () { return true });
+    console.log("Values: " + values);
+}
+
+function addRecord() {
+  var inp = document.getElementById('inputtext');
+  var res = "";
+  if(!isNaN(inp.value))
+  {
+    values.push(inp.value);
+    startvalues.push(inp.value);
+  }else{
+    res = "'" + inp.value + "' is not a valid number. Please enter a valid number.";
+    document.getElementById("errors").innerHTML = res;
+  }
+  inp.value = "";  
+}
+
+function displayRecord() {
+  document.getElementById("values").innerHTML = values.join(" | ");
+}
+
+function setHead() {
+  var inp = document.getElementById('inputtext2');
+  var res = "";
+  if(!isNaN(inp.value))
+  {
+    head = inp.value;
+  }else{
+    res = "'" + inp.value + "' is not a valid number. Please enter a valid Read/Write head.";
+    document.getElementById("errors").innerHTML = res;
+  }
+  inp.value = "";  
+}
+
+function displayHead() {
+  document.getElementById("head").innerHTML = "Head: " + head;
+}
+
+function displayLine() {
+    ctx.beginPath();
+    if(index == 0){
+        ctx.moveTo(head, 0);
+    }else{
+        ctx.moveTo(values[index - 1], verticalindex);
+    }
+    verticalindex = verticalindex + 25;
+    ctx.lineTo(values[index], verticalindex);
+    ctx.stroke();   
+    index++;
+}
+
+function displayAll() {
+    ctx.beginPath();
+    //console.log(values.length);
+    localverticalindex = 25;
+        for(var i = 0; i < values.length; i++)
+        {
+            if(i == 0){
+                ctx.moveTo(head, 0);
+                ctx.lineTo(values[i],localverticalindex);
+            }else{
+                ctx.moveTo(values[i - 1],localverticalindex);
+                localverticalindex = localverticalindex + 25; 
+                ctx.lineTo(values[i], localverticalindex);
+            }
+        }   
+        ctx.stroke();
+        localverticalindex = 25;
+}
+//NOT WORKING CORRECTLY - FIX THIS \/ \/ \/
+function clearLine() {
+    if(index == 0){
+        ctx.clearRect(head, 0, values[index], verticalindex);
+    }else{
+        ctx.clearRect(values[index - 1], verticalindex -25, values[index], verticalindex);
+        verticalindex = verticalindex - 25;
+        index--;
+        console.log("x1 = " + values[index -1]);
+        console.log("y1 = " + (verticalindex - 25));
+        console.log("x2 = " + values[index]);
+        console.log("y2 = " + verticalindex);
+    }
+}
+//NOT WORKING CORRECTLY - FIX THIS /\ /\ /\
+function clearAll() {
+    ctx.clearRect(0, 0, 700, 500);
+    index = 0;
+    verticalindex = 0;
+}
+</script>
+
+</body>
+</html>
