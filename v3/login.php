@@ -40,7 +40,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 $_SESSION['loggedin'] = 1; 
                                 header('Location: view.php');
                                 exit();
-                                
                             } else{
                                 // Display an error message if password is not valid
                                 $message = "The password you entered was not valid.";
@@ -73,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <?php include 'templates/navbar.php'; ?>
-    <div v-if="showLoggin">
+    <div >
         <CENTER >Log In
             <form method="post" action="login.php">
                     <p>User Name:
@@ -88,16 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </CENTER>
     </div>
     
-    <script src="https://unpkg.com/vue@next"></script>
-    <script>
-        let app = Vue.createApp({
-            data: function() {
-                return {
-                    showLoggin: true
-                }
-            }
-        })
-    </script>
+
 </body>
 </html>
 

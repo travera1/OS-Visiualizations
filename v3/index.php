@@ -3,7 +3,6 @@
   <title>OS Visualizations</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/p/f21-13/files/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -189,7 +188,7 @@
              <p>
                 Visualizations for our Page Replacement Algorithms.
             </p>
-            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/f21-13/docs/2-replace/index.php" style="float: right;">Page Replacement</a>
+            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/f21-13/v3/2-replace/index.php" style="float: right;">Page Replacement</a>
  	 </div>
 	</div>
 
@@ -201,7 +200,7 @@
              <p>
                 Visualizations for our CPU Scheduling Algorithms.
             </p>
-            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/f21-13/docs/1-cpu/index.php" style="float: right;">CPU Scheduling</a>
+            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/f21-13/v3/1-cpu/index.php" style="float: right;">CPU Scheduling</a>
  	 </div>
 	</div>
 
@@ -215,7 +214,7 @@
              <p>
                 Visualizations for our Disk Scheduling Algorithms.
             </p>
-            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/f21-13/docs/3-disk/index.php" style="float: right;">Disk Scheduling</a>
+            <a type="button" class="btn btn-dark" href="http://cs.newpaltz.edu/p/f21-13/v3/3-disk/index.php" style="float: right;">Disk Scheduling</a>
  	 </div>
 	</div>
 
@@ -227,7 +226,7 @@
              <p>
                 Visualizations for our Memory Allocation Algorithms.
             </p>
-            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/p/f21-13/docs/4-memory/index.php" style="float: right;">Memory Allocation</a>
+            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/p/f21-13/v3/4-memory/index.php" style="float: right;">Memory Allocation</a>
  	 </div>
 	</div>
 
@@ -241,7 +240,7 @@
              <p>
                 Visualizations for our File Allocation Algorithms.
             </p>
-            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/p/f21-13/docs/5-files/index.php" style="float: right;">File Allocation</a>
+            <a type="button" class="btn btn-info" href="http://cs.newpaltz.edu/p/f21-13/v3/5-files/index.php" style="float: right;">File Allocation</a>
  	 </div>
 	</div>
 
@@ -253,7 +252,7 @@
              <p>
                 Visualizations for our Address Translations.
             </p>
-            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/f21-13/docs/6-address/AddressTranslation.php" style="float: right;">Address Translation</a>
+            <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/f21-13/v3/6-address/AddressTranslation.php" style="float: right;">Address Translation</a>
  	 </div>
 	</div>
 
