@@ -164,7 +164,7 @@
                 rawFile.send(null);
                 console.log(procHandler);
             }
-            readInputTextFile("input.txt");
+            readInputTextFile("../../files/CPU.txt");
             console.log(procHandler);
 
             var numberOfProcesses = procHandler.length;

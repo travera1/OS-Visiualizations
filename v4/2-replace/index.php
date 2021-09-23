@@ -373,7 +373,7 @@
 $(document).ready(function(){
  $('#load_data').click(function(){
   $.ajax({
-   url:"PageReplacementInput.txt",
+   url:"../../files/replace.txt",
    dataType:"text",
    success:function(data)
    {

@@ -1,6 +1,6 @@
 import sys
 
-input = open("input.txt", "r") # open input file
+input = open("../../files/memory.txt", "r") # open input file
 lines = input.readlines() # read input file lines
 input.close()
 temp = []

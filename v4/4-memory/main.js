@@ -91,7 +91,7 @@ $(document).ready(function () {
     $.ajax({
         async: true,   // this will solve the problem
         type: "GET",
-        url: "input.txt",
+        url: "../../files/memory.txt",
         dataType: "text",
         success: function (res) {
             console.log(res);

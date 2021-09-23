@@ -9,39 +9,39 @@
     <tbody>
         <tr>
             <th>Page Replacement</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/replace.txt"); ?> <a href="#">(edit)</a></th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/replace.txt"); ?> <a href="update.php?<?php echo 'page' ?>">(edit)</a></th>
         </tr>
         <tr>
             <th>Memory Allocation</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/memory.txt"); ?> <a href="#">(edit)</th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/memory.txt"); ?> <a href="update.php?<?php echo 'memory' ?>">(edit)</th>
         </tr>
         <tr>
             <th>CPU Scheduling</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/CPU.txt"); ?> <a href="#">(edit)</th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/CPU.txt"); ?> <a href="update.php?<?php echo '' ?>cpu">(edit)</th>
         </tr>
         <tr>
             <th>Disk Scheduling (CLOOK, LOOK, SSTF)</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/CLOOK.txt"); ?> <a href="#">(edit)</th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/CLOOK.txt"); ?> <a href="update.php?<?php echo 'disk1' ?>">(edit)</th>
         </tr>
         <tr>
             <th>Disk Scheduling (SCAN)</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/CSCAN.txt"); ?> <a href="#">(edit)</th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/CSCAN.txt"); ?> <a href="update.php?<?php echo 'cscan' ?>">(edit)</th>
         </tr>
         <tr>
             <th>Disk Scheduling (FCFS)</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/FCFS.txt"); ?> <a href="#">(edit)</th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/FCFS.txt"); ?> <a href="update.php?<?php echo 'fcfs' ?>">(edit)</th>
         </tr>
         <tr>
             <th>File Allocation (Contiguous)</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/contin.txt"); ?> <a href="#">(edit)</th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/contin.txt"); ?> <a href="update.php?<?php echo 'contin' ?>">(edit)</th>
         </tr>
         <tr>
             <th>File Allocation (Linked)</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/link.txt"); ?> <a href="#">(edit)</th>   
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/link.txt"); ?> <a href="update.php?<?php echo 'link' ?>">(edit)</th>   
         </tr>
         <tr>
             <th>File Allocation (Indexed)</th>
-            <th><?php echo readfile("/var/www/projects/f21-13/html/files/index.txt"); ?> <a href="#">(edit)</th>
+            <th><?php echo readfile("/var/www/projects/f21-13/html/files/index.txt"); ?> <a href="update.php?<?php echo 'index' ?>">(edit)</th>
         </tr>
     </tbody>
 </table>

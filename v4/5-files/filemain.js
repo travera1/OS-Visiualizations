@@ -106,7 +106,7 @@ $(document).ready(function () {
         $.ajax({
             async: true,   // this will solve the problem
             type: "GET",
-            url: "contin.txt",
+            url: "../../files/contin.txt",
             dataType: "text",
             success: function (res) {
                 console.log(res);
@@ -138,7 +138,7 @@ $(document).ready(function () {
         $.ajax({
             async: true,   // this will solve the problem
             type: "GET",
-            url: "link.txt",
+            url: "../../files/link.txt",
             dataType: "text",
             success: function (res) {
                 console.log(res);
@@ -170,7 +170,7 @@ $(document).ready(function () {
         $.ajax({
             async: true,   // this will solve the problem
             type: "GET",
-            url: "index.txt",
+            url: "../../files/index.txt",
             dataType: "text",
             success: function (res) {
                 console.log(res);
