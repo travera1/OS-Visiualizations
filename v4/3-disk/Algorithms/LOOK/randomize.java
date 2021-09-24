@@ -33,7 +33,7 @@ public class randomize
    public static void writeToFile(int[] q, int h)
    {
      try {
-        FileWriter myWriter = new FileWriter("input.txt");
+        FileWriter myWriter = new FileWriter("../../../files/CLOOK.txt");
         myWriter.write("0 699" + "\n");
         myWriter.write(h + "\n");
         for(int i = 0; i < q.length;i++)
