@@ -39,7 +39,7 @@
 
 <div class = "bg">
 
-<?php include 'templates/navbar.php'; ?>
+<?php include '../templates/navbar.php'; ?>
 
 <div class="container p-3 my-3 border bg-light rounded">
 	<div class = "pt-3 pr-3 pl-3">

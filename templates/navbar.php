@@ -27,6 +27,9 @@
       <li class="nav-item">
         <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v4/login.php">Log In</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://cs.newpaltz.edu/p/f21-13/v4/logout.php">Log Out</a>
+      </li>
    </ul>
    </div>
 </nav>
