@@ -71,7 +71,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-     <?php include '../templates/navbar.php'; ?>
+     <?php include '../../templates/navbar.php'; ?>
 <style type="text/css">
 #slideshow {
   margin: 50px auto;

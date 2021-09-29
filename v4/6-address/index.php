@@ -52,7 +52,7 @@
 </head>
 <body>
   
-  <?php include '../templates/employeeHeader.php'; ?>
+  <?php include '../../templates/employeeHeader.php'; ?>
 
   <div id="app">
     <div class="main">
