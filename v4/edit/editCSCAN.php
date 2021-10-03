@@ -29,7 +29,8 @@
     
     <?php 
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
-        include '../../templates/navbar.php'; ?>
+        include '../../templates/navbar.php';
+        $data = file_get_contents("/var/www/projects/f21-13/html/files/CSCAN.txt"); ?>
     
     <div class="section">
         <div class="block">
@@ -39,15 +40,14 @@
                 </div>
                 <div class="column is-four-fifths">
                 <p class="has-text-grey-dark">
-                0 699 <br>50 <br>89 183 40 8 500 </p>
+                    <?php echo htmlentities($data);?> </p>
                 </div>
             </div>
         </div>
         <div class="block">
             <form action="editCSCAN.php" method="POST">
                 <div class="field" style="max-width: 500px;">
-                    <textarea name="data" id="" cols="10" rows="3" class="textarea"
-                    placeholder="0 699&#10;50&#10;89 183 40 8 500&#10;"></textarea>
+                    <textarea name="data" id="" cols="10" rows="3" class="textarea"><?php echo htmlentities($data);?></textarea>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">

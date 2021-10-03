@@ -29,7 +29,9 @@
     
     <?php 
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
-        include '../../templates/navbar.php'; ?>
+        include '../../templates/navbar.php'; 
+        $data = file_get_contents("/var/www/projects/f21-13/html/files/CPU.txt");
+    ?>
     
     <div class="section">
         <div class="block">
@@ -39,11 +41,7 @@
                 </div>
                 <div class="column is-four-fifths">
                     <p class="has-text-grey-dark">
-                        1,5,7,1 <br>
-                        2,0,1,4 <br>
-                        3,3,8,5 <br>
-                        4,1,6,5 <br>
-                        5,4,5,2 
+                         <?php echo htmlentities($data);?>
                     </p>
                 </div>
             </div>
@@ -51,8 +49,7 @@
         <div class="block">
             <form action="editCPU.php" method="POST">
                 <div class="field" style="max-width: 500px;">
-                    <textarea name="data" id="" cols="10" rows="10" class="textarea"
-                    placeholder="1,5,7,1&#10;2,0,1,4&#10;3,3,8,5&#10;4,1,6,5&#10;5,4,5,2"></textarea>
+                    <textarea name="data" id="" cols="10" rows="10" class="textarea"><?php echo htmlentities($data); ?></textarea>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">
