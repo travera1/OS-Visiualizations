@@ -24,7 +24,7 @@
 
 <body>
 
-    <?php include '../templates/navbar.php'; ?>
+    <?php include '../../templates/navbar.php'; ?>
 
     <br>
     <div class="d-flex align-items-center justify-content-center">

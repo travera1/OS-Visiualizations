@@ -29,7 +29,8 @@
     
     <?php 
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
-        include '../../templates/navbar.php'; ?>
+        include '../../templates/navbar.php'; 
+        $data = file_get_contents("/var/www/projects/f21-13/html/files/contin.txt");?>
     
     <div class="section">
         <div class="block">
@@ -39,9 +40,7 @@
                 </div>
                 <div class="column is-four-fifths">
                     <p class="has-text-grey-dark">
-                    32 <br>
-                    1,1,0,2,2,2,2,0,0,0,0,0,,3,3,3,3,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0 <br>
-                    4 <br>1,count,2 <br>2,tr,4 <br>3,yum,4 <br>4,hyd,3
+                    <?php echo htmlentities($data);?>
                     </p>
                 </div>
             </div>
@@ -50,7 +49,7 @@
             <form action="editContinuous.php" method="POST">
                 <div class="field" style="max-width: 600px;">
                     <textarea name="data" id="" cols="8" rows="10" class="textarea"
-                    placeholder="32&#10;1,1,0,2,2,2,2,0,0,0,0,0,,3,3,3,3,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0&#10;4&#10;1,count,2&#10;2,tr,4&#10;3,yum,4&#10;4,hyd,3"></textarea>
+                    ><?php echo htmlentities($data);?></textarea>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">

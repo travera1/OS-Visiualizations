@@ -75,7 +75,7 @@
 </head>
 <body>
 
-    <?php include '../templates/navbar.php'; ?>
+    <?php include '../../templates/navbar.php'; ?>
       
     <div class="containerFluid p-3 my-3 border bg-light">
 

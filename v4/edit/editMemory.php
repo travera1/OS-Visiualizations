@@ -29,7 +29,8 @@
     
     <?php 
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
-        include '../../templates/navbar.php'; ?>
+        include '../../templates/navbar.php';
+        $data = file_get_contents("/var/www/projects/f21-13/html/files/memory.txt"); ?>
     
     <div class="section">
         <div class="block">
@@ -39,17 +40,13 @@
                 </div>
                 <div class="column is-one-fifth">
                     <p class="has-text-grey-dark">
-                    10<br>100 400 <br>600 700 <br>1500 1900 <br> 2000 2400 <br>2600 2900 
-                    <br>3000 3900 <br>4000 4900 <br>5000 5900 <br>6000 6900 <br>7000 7900
-                    <br>10 <br>1 190 <br>2 210 <br>3 205 <br>4 100 <br>5 290 <br>6 191 
-                    <br>7 211 <br>8 206 <br>9 101 <br>10 291  
+                    <?php echo htmlentities($data); ?> </p>
                     </p>
                 </div>
                 <div class="column">
                     <form action="editMemory.php" method="POST">
                         <div class="field" style="max-width: 500px;">
-                            <textarea name="data" id="" cols="10" rows="24" class="textarea"
-                            placeholder="10&#10;100 400&#10;600 700&#10;1500 1900&#10;2000 2400&#10;2600 2900&#10;3000 3900&#10;4000 4900&#10;5000 5900&#10;6000 6900&#10;7000 7900&#10;10&#10;1 190&#10;2 210&#10;3 205&#10;4 100&#10;5 290&#10;6 191&#10;7 211&#10;8 206&#10;9 101&#10;10 291"></textarea>
+                            <textarea name="data" id="" cols="10" rows="24" class="textarea"><?php echo htmlentities($data);?></textarea>
                         </div>
                         <div class="field is-grouped">
                             <div class="control">

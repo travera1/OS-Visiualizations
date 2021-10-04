@@ -29,7 +29,10 @@
     
     <?php 
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
-        include '../../templates/navbar.php'; ?>
+        include '../../templates/navbar.php'; 
+
+        $data = file_get_contents("/var/www/projects/f21-13/html/files/replace.txt");
+    ?>
     
     <div class="section">
         <div class="block">
@@ -39,15 +42,14 @@
                 </div>
                 <div class="column is-four-fifths">
                 <p class="has-text-grey-dark">
-                    Reference String,7,0,1,2,0,3,0,4,2,3 <br> Frames = 3 </p>
+                    <?php echo htmlentities($data); ?> </p>
                 </div>
             </div>
         </div>
         <div class="block">
             <form action="editPageReplacement.php" method="POST">
                 <div class="field" style="max-width: 500px;">
-                    <textarea name="data" id="" cols="10" rows="3" class="textarea"
-                    placeholder="Reference String,7,0,1,2,0,3,0,4,2,3&#10;Frames = 3"></textarea>
+                    <textarea name="data" id="" cols="10" rows="3" class="textarea"><?php echo htmlentities($data); ?></textarea>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">

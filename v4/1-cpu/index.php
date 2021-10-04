@@ -34,7 +34,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <?php include '../templates/navbar.php'; ?>
+        <?php include '../../templates/navbar.php'; ?>
 
         <br>
         <div class="d-flex align-items-center justify-content-center">
