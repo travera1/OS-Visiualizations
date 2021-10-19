@@ -1,0 +1,110 @@
+<!DOCTYPE html> <html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+initial-scale=1.0">
+    <title>Disk Scheduling</title>
+    <style>
+    .floatL{
+         float:left;
+    }
+    .floatR{
+         float:right;
+    }
+    .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    }
+    .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    }
+    canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color:white ;
+    }
+    body{
+        background-color:beige;
+    }
+    </style> </head> <body>
+    <div class="center">
+    <div class = "grid-container">
+    <div class="item1">
+    <input type="text" id="inputtext" />
+    <button type="button" id="add" 
+onclick="addRecord();displayRecord();">Add </button>
+    <div id='values'></div>
+    </div>
+    <div class="item2">
+    <table>
+        <tr>
+            <td>Buttons</td>
+        </tr>
+        <tr>
+            <td><button type="button" id="Previous" onclick=" 
+clearLine();">Previous</button></td>
+            <td><button type="button" id="Next" 
+onclick="displayLine();">Next </button></td>
+            <td><button type="button" id="Play" onclick="">Play 
+</button></td>
+            <td><button type="button" id="Pause" onclick="">Pause 
+</button></td>
+            <td><button type="button" id="Start" 
+onclick="clearAll();">Start </button></td>
+            <td><button type="button" id="End" 
+onclick="displayAll();">End </button></td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    <canvas id="myCanvas" width="700" height="500" style="border:1px 
+solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas> 
+</div> <script>
+    values = [];
+    index = 0; function addRecord() {
+  var inp = document.getElementById('inputtext');
+  values.push(inp.value);
+  inp.value = "";
+}
+function displayRecord() {
+  document.getElementById("values").innerHTML = values.join(" | ");
+}
+function displayLine() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(300, 150);
+    ctx.stroke();
+}
+function displayAll() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(300, 150);
+    ctx.moveTo(300, 150);
+    ctx.lineTo(400, 200);
+    ctx.moveTo(400, 200);
+    ctx.lineTo(100, 425);
+    ctx.stroke();
+}
+function clearLine() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.clearRect(0, 0, 300, 150);
+}
+function clearAll() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.clearRect(0, 0, 700, 500);
+}
+</script> </body>
+</html>
