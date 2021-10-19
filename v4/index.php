@@ -252,7 +252,7 @@
      	    <h5 class="card-title">Address Translation</h5>
              <p>
                 Visualizations for our Address Translations.
-            </p>
+            </p><br>
             <a type="button" class="btn btn-primary" href="http://cs.newpaltz.edu/p/f21-13/v4/6-address/AddressTranslation.php" style="float: right;">Address Translation</a>
  	 </div>
 	</div>
