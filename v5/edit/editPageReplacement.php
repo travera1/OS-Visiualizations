@@ -1,15 +1,44 @@
 <?php 
       
       if(isset($_POST['submit'])){
-        if(empty($_POST['data'])){
+        if(empty($_POST['input'])){
         } else {
-            $filename="../../files/replace.txt";
-            $newData = $_POST['data'];
+            $filename="../../files/p4-page-input.txt";
+            $newData = $_POST['input'];
             file_put_contents($filename, $newData);
-            echo 'successful file data change';
-            header('Location: ../view.php');
         }
-       // echo 'no data added successfully';
+        if(empty($_POST['output-fifo'])){
+        } else {
+            $filename="../../files/p4-page-output-fifo.txt";
+            $newData = $_POST['output-fifo'];
+            file_put_contents($filename, $newData);
+        }
+        if(empty($_POST['output-lru'])){
+        } else {
+            $filename="../../files/p4-page-output-lru.txt";
+            $newData = $_POST['output-lru'];
+            file_put_contents($filename, $newData);
+        }
+        if(empty($_POST['output-optimal'])){
+        } else {
+            $filename="../../files/p4-page-output-optimal.txt";
+            $newData = $_POST['output-optimal'];
+            file_put_contents($filename, $newData);
+        }
+        if(empty($_POST['output-lfu'])){
+        } else {
+            $filename="../../files/p4-page-output-lfu.txt";
+            $newData = $_POST['output-lfu'];
+            file_put_contents($filename, $newData);
+        }
+        if(empty($_POST['output-mfu'])){
+        } else {
+            $filename="../../files/p4-page-output-mfu.txt";
+            $newData = $_POST['output-mfu'];
+            file_put_contents($filename, $newData);
+        }
+        header('Location: ../view.php');
+       
       }
       
     ?>
@@ -31,25 +60,44 @@
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
         include '../../templates/navbar.php'; 
 
-        $data = file_get_contents("/var/www/projects/f21-13/html/files/replace.txt");
+        $input = file_get_contents("/var/www/projects/f21-13/html/files/p4-page-input.txt");
+        $fifo = file_get_contents("/var/www/projects/f21-13/html/files/p4-page-output-fifo.txt");
+        $lru = file_get_contents("/var/www/projects/f21-13/html/files/p4-page-output-lru.txt");
+        $optimal= file_get_contents("/var/www/projects/f21-13/html/files/p4-page-output-optimal.txt");
+        $lfu = file_get_contents("/var/www/projects/f21-13/html/files/p4-page-output-lfu.txt");
+        $mfu = file_get_contents("/var/www/projects/f21-13/html/files/p4-page-output-mfu.txt");
     ?>
     
-    <div class="section">
-        <div class="block">
-            <div class="columns">
-                <div class="column is-one-fifth">
-                    <p><strong>Example Data:</strong> </p>
-                </div>
-                <div class="column is-four-fifths">
-                <p class="has-text-grey-dark">
-                    <?php echo htmlentities($data); ?> </p>
-                </div>
-            </div>
-        </div>
-        <div class="block">
+    <div class="section" style="display: inline;" >
+        <div>
             <form action="editPageReplacement.php" method="POST">
-                <div class="field" style="max-width: 500px;">
-                    <textarea name="data" id="" cols="10" rows="3" class="textarea"><?php echo htmlentities($data); ?></textarea>
+                <div class="columns">
+                    <div class="field column" style="max-width: 500px;">
+                        <label for="input"><span><strong>Input: (Example Data: </strong></span> <?php echo htmlentities($input);?><span><strong> )</strong></span></label>
+                        <textarea name="input" id="input" cols="10" rows="10" class="textarea"><?php echo htmlentities($input); ?></textarea>
+                    </div>
+                    <div class="field column" style="max-width: 500px;">
+                        <label for="output-fifo">Output fifo:</label>
+                        <textarea name="output-fifo" id="output-fifo" cols="10" rows="10" class="textarea"><?php echo htmlentities($fifo); ?></textarea>
+                    </div>
+                    <div class="field column" style="max-width: 500px;">
+                        <label for="output-lru">Output lru:</label>
+                        <textarea name="output-lru" id="output-lru" cols="10" rows="10" class="textarea"><?php echo htmlentities($lru); ?></textarea>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="field column" style="max-width: 500px;">
+                        <label for="output-optimal">Output optimal:</label>
+                        <textarea name="output-optimal" id="output-optimal" cols="10" rows="10" class="textarea"><?php echo htmlentities($optimal); ?></textarea>
+                    </div>
+                    <div class="field column" style="max-width: 500px;">
+                        <label for="output-lfu">Output lfu:</label>
+                        <textarea name="output-lfu" id="output-lfu" cols="10" rows="10" class="textarea"><?php echo htmlentities($lfu); ?></textarea>
+                    </div>
+                    <div class="field column" style="max-width: 500px;">
+                        <label for="output-mfu">Output mfu:</label>
+                        <textarea name="output-mfu" id="output-mfu" cols="10" rows="10" class="textarea"><?php echo htmlentities($mfu); ?></textarea>
+                    </div>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">
@@ -57,8 +105,8 @@
                         <a class="button is-link is-light" href="../view.php">Cancel</a> 
                     </div>
                 </div>
-            </form>
+            </form> 
         </div>
-    </div>   
+    </div>      
 </body>
 </html>

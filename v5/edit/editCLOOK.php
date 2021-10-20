@@ -1,19 +1,34 @@
 <?php 
       
       if(isset($_POST['submit'])){
-        if(empty($_POST['data'])){
+        if(empty($_POST['input'])){
         } else {
-            $filename="../../files/CLOOK.txt";
-            $newData = $_POST['data'];
+            $filename="../../files/p6-disk-input-clooklooksstf.txt";
+            $newData = $_POST['input'];
             file_put_contents($filename, $newData);
-            echo 'successful file data change';
-            header('Location: ../view.php');
         }
-        //echo 'no data added successfully';
+        if(empty($_POST['output-clook'])){
+        } else {
+            $filename="../../files/p6-disk-output-clook.txt";
+            $newData = $_POST['output-clook'];
+            file_put_contents($filename, $newData);
+        }
+        if(empty($_POST['output-look'])){
+        } else {
+            $filename="../../files/p6-disk-output-look.txt";
+            $newData = $_POST['output-look'];
+            file_put_contents($filename, $newData);
+        }
+        
+        if(empty($_POST['output-sstf'])){
+        } else {
+            $filename="../../files/p6-disk-output-sstf.txt";
+            $newData = $_POST['output-sstf'];
+            file_put_contents($filename, $newData);
+        }
+        header('Location: ../view.php');
       }
-      
     ?>
-
 
 <html>
 <head>
@@ -30,24 +45,35 @@
     <?php 
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
         include '../../templates/navbar.php';
-        $data = file_get_contents("/var/www/projects/f21-13/html/files/CLOOK.txt"); ?>
+        $outputclook = file_get_contents("/var/www/projects/f21-13/html/files/p6-disk-output-clook.txt");
+        $outputlook = file_get_contents("/var/www/projects/f21-13/html/files/p6-disk-output-look.txt");
+        $outputsstf = file_get_contents("/var/www/projects/f21-13/html/files/p6-disk-output-sstf.txt");
+        $input = file_get_contents("/var/www/projects/f21-13/html/files/p6-disk-input-clooklooksstf.txt"); ?>
     
-    <div class="section">
-        <div class="block">
-            <div class="columns">
-                <div class="column is-one-fifth">
-                    <p><strong>Example Data:</strong> </p>
-                </div>
-                <div class="column is-four-fifths">
-                <p class="has-text-grey-dark">
-                <?php echo htmlentities($data);?> </p>
-                </div>
-            </div>
-        </div>
-        <div class="block">
+    <div class="section" style="display: inline;" >
+        <div>
             <form action="editCLOOK.php" method="POST">
-                <div class="field" style="max-width: 500px;">
-                    <textarea name="data" id="" cols="10" rows="3" class="textarea"><?php echo htmlentities($data); ?></textarea>
+                <div>
+                    <div class="columns">
+                        <div class="field column" style="max-width: 500px;">
+                            <label for="input"><span><strong>Input: (Example Data: </strong></span> <?php echo htmlentities($input);?><span><strong> )</strong></span></label>
+                            <textarea name="input" id="input" cols="10" rows="10" class="textarea"><?php echo htmlentities($input); ?></textarea>
+                        </div>
+                        <div class="field column" style="max-width: 500px;">
+                            <label for="output-clook">Output clook:</label>
+                            <textarea name="output-clook" id="output" cols="10" rows="10" class="textarea"><?php echo htmlentities($outputclook); ?></textarea>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="field column" style="max-width: 500px;">
+                            <label for="output-look">Output look</label>
+                            <textarea name="output-look" id="input" cols="10" rows="10" class="textarea"><?php echo htmlentities($outputlook); ?></textarea>
+                        </div>
+                        <div class="field column" style="max-width: 500px;">
+                            <label for="output-sstf">Output sstf:</label>
+                            <textarea name="output-sstf" id="output" cols="10" rows="10" class="textarea"><?php echo htmlentities($outputsstf); ?></textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">
@@ -55,8 +81,8 @@
                         <a class="button is-link is-light" href="../view.php">Cancel</a> 
                     </div>
                 </div>
-            </form>
+            </form> 
         </div>
-    </div>   
+    </div>         
 </body>
 </html>

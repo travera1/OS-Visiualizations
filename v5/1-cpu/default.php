@@ -51,7 +51,7 @@
 
 
     //FCFS
-    $defaultFCFS = fopen("FCFS/output.txt","w") or die("Unable to open file!");
+    $defaultFCFS = fopen("../../files/p1-cpu-output-fcfs.txt","w") or die("Unable to open file!");
 
     fwrite($defaultFCFS, 1);
     fwrite($defaultFCFS, ",");
@@ -92,7 +92,7 @@
 
 
     //SJF:NON
-    $defaultSJFnon = fopen("SJF/NONPREEMPTIVE/output.txt","w") or die("Unable to open file!");
+    $defaultSJFnon = fopen("../../files/p1-cpu-output-sjf.txt","w") or die("Unable to open file!");
 
     fwrite($defaultSJFnon, 1);
     fwrite($defaultSJFnon, ",");
@@ -134,7 +134,7 @@
 
     //SJF:PRE
     
-    $defaultSJFpre = fopen("SJF/PREEMPTIVE/output.txt", "w") or die("Unable to open file!");
+    $defaultSJFpre = fopen("../../files/p1-cpu-output-sjf-p.txt", "w") or die("Unable to open file!");
 
     fwrite($defaultSJFpre, 1);
     fwrite($defaultSJFpre, ",");
@@ -185,7 +185,7 @@
 
 
     //PRIO:NON
-    $defaultPRIOnon = fopen("PRIORITY/NONPREEMPTIVE/output.txt","w") or die("Unable to open file!");
+    $defaultPRIOnon = fopen("../../files/p1-cpu-output-priority.txt","w") or die("Unable to open file!");
 
     fwrite($defaultPRIOnon, 1);
     fwrite($defaultPRIOnon, ",");
@@ -226,7 +226,7 @@
 
 
     //PRIO:PRE
-    $defaultPRIOpre = fopen("PRIORITY/PREEMPTIVE/output.txt","w") or die("Unable to open file!");
+    $defaultPRIOpre = fopen("../../files/p1-cpu-output-priority-p.txt","w") or die("Unable to open file!");
 
     fwrite($defaultPRIOpre, 1);
     fwrite($defaultPRIOpre, ",");
@@ -281,7 +281,7 @@
 
 
     //RR
-    $defaultRR = fopen("RR/output.txt", "w") or die("Unable to open file!");
+    $defaultRR = fopen("../../files/p1-cpu-output-roundrobin.txt", "w") or die("Unable to open file!");
 
     fwrite($defaultRR, 1);
     fwrite($defaultRR, ",");

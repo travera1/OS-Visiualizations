@@ -19,7 +19,7 @@ class CLOOK
         ArrayList <Integer> arrlist= new ArrayList<Integer>();
         int x = 0; 
          try {
-          File myObj = new File("../../../files/CLOOK.txt");
+          File myObj = new File("../../../files/p6-disk-input-clooklooksstf.txt");
           Scanner Scan = new Scanner(myObj);
           
           while (Scan.hasNext()) 

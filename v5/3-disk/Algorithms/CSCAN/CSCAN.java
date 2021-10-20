@@ -19,7 +19,7 @@ class CSCAN
         ArrayList <Integer> arrlist= new ArrayList<Integer>();
         int x = 0; 
          try {
-          File myObj = new File("../../../files/CSCAN.txt");
+          File myObj = new File("../../../files/p6-disk-input-cscan.txt");
           Scanner Scan = new Scanner(myObj);
           
           while (Scan.hasNext()) 

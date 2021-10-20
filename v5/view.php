@@ -13,45 +13,69 @@
 
 <table class="table is-bordered is-striped is-hoverable">
     <tr>
-        <th>Algorithm</th>
-        <th>Input</th>
+        <th>ALGORITHM</th>
+        <th>INPUT</th>
+        <th>OUTPUT</th>
     </tr>
     <tbody>
         <tr>
-            <th>Page Replacement</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/replace.txt"); ?> <a href="edit/editPageReplacement.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editCPU.php">CPU Scheduling</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p1-cpu-input.txt"); ?></th>
+            <th><span style="color: green;">fcfs:</span> <?php readfile("/var/www/projects/f21-13/html/files/p1-cpu-output-fcfs.txt"); ?>
+            <br><span style="color: green;">sjf:</span> <?php readfile("/var/www/projects/f21-13/html/files/p1-cpu-output-sjf.txt"); ?>
+            <br><span style="color: green;">sjf-p:</span> <?php readfile("/var/www/projects/f21-13/html/files/p1-cpu-output-sjf-p.txt"); ?>
+            <br><span style="color: green;">priority:</span> <?php readfile("/var/www/projects/f21-13/html/files/p1-cpu-output-priority.txt"); ?>
+            <br><span style="color: green;">priority-p:</span> <?php readfile("/var/www/projects/f21-13/html/files/p1-cpu-output-priority-p.txt"); ?>
+            <br><span style="color: green;">round robin:</span><?php readfile("/var/www/projects/f21-13/html/files/p1-cpu-output-roundrobin.txt"); ?></th>
         </tr>
         <tr>
-            <th>Memory Allocation</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/memory.txt"); ?> <a href="edit/editMemory.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editMemory.php">Memory Allocation</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p3-memory-input.txt"); ?> </th>
+            <th><span style="color: green;">firstfit:</span> <?php readfile("/var/www/projects/f21-13/html/files/p3-memory-output-firstfit.txt"); ?>
+            <br><span style="color: green;">bestfit:</span> <?php readfile("/var/www/projects/f21-13/html/files/p3-memory-output-bestfit.txt"); ?>
+            <br><span style="color: green;">worstfit:</span> <?php readfile("/var/www/projects/f21-13/html/files/p3-memory-output-worstfit.txt"); ?></th>
         </tr>
         <tr>
-            <th>CPU Scheduling</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/CPU.txt"); ?> <a href="edit/editCPU.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editPageReplacement.php">Page Replacement</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p4-page-input.txt"); ?> </th>
+            <th><span style="color: green;">fifo:   </span> <?php readfile("/var/www/projects/f21-13/html/files/p4-page-output-fifo.txt"); ?>
+            <br><span style="color: green;">lru:    </span> <?php readfile("/var/www/projects/f21-13/html/files/p4-page-output-lru.txt"); ?>
+            <br><span style="color: green;">optimal:</span> <?php readfile("/var/www/projects/f21-13/html/files/p4-page-output-optimal.txt"); ?>
+            <br><span style="color: green;">lfu:    </span> <?php readfile("/var/www/projects/f21-13/html/files/p4-page-output-lfu.txt"); ?>
+            <br><span style="color: green;">mfu:    </span> <?php readfile("/var/www/projects/f21-13/html/files/p4-page-output-mfu.txt"); ?></th>
         </tr>
         <tr>
-            <th>Disk Scheduling (CLOOK, LOOK, SSTF)</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/CLOOK.txt"); ?> <a href="edit/editCLOOK.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editContinuous.php">File Allocation (Continuous)</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p5-file-input-continuous.txt"); ?></th>
+            <th><span style="color: green;">continuous:</span> <?php readfile("/var/www/projects/f21-13/html/files/p5-file-output.txt"); ?></th>
         </tr>
         <tr>
-            <th>Disk Scheduling (CSCAN)</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/CSCAN.txt"); ?> <a href="edit/editCSCAN.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editLinked.php">File Allocation (Linked)</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p5-file-input-linked.txt"); ?></th>
+            <th><span style="color: green;">linked:</span> <?php readfile("/var/www/projects/f21-13/html/files/p5-file-output.txt"); ?></th>   
         </tr>
         <tr>
-            <th>Disk Scheduling (FCFS)</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/FCFS.txt"); ?> <a href="edit/editFCFS.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editIndexed.php">File Allocation (Indexed)</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p5-file-input-indexed.txt"); ?></th>
+            <th><span style="color: green;">indexed:</span> <?php readfile("/var/www/projects/f21-13/html/files/p5-file-output.txt"); ?></th>
         </tr>
         <tr>
-            <th>File Allocation (Contiguous)</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/contin.txt"); ?> <a href="edit/editContinuous.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editCLOOK.php">Disk Scheduling (CLOOK, LOOK, SSTF)</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p6-disk-input-clooklooksstf.txt"); ?></th>
+            <th><span style="color: green;">clook:</span> <?php readfile("/var/www/projects/f21-13/html/files/p6-disk-output-clook.txt"); ?>
+            <br><span style="color: green;">look:</span> <?php readfile("/var/www/projects/f21-13/html/files/p6-disk-output-look.txt"); ?>
+            <br><span style="color: green;">sstf:</span> <?php readfile("/var/www/projects/f21-13/html/files/p6-disk-output-sstf.txt"); ?></th>
+            
         </tr>
         <tr>
-            <th>File Allocation (Linked)</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/link.txt"); ?> <a href="edit/editLinked.php">(edit)</a></th>   
+            <th style="max-width: 270px;"><a href="edit/editCSCAN.php">Disk Scheduling (CSCAN)<a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p6-disk-input-cscan.txt"); ?> </th>
+            <th><span style="color: green;">cscan:</span> <?php readfile("/var/www/projects/f21-13/html/files/p6-disk-output-cscan.txt"); ?></th>
         </tr>
         <tr>
-            <th>File Allocation (Indexed)</th>
-            <th><?php readfile("/var/www/projects/f21-13/html/files/index.txt"); ?> <a href="edit/editIndexed.php">(edit)</a></th>
+            <th style="max-width: 270px;"><a href="edit/editFCFS.php">Disk Scheduling (FCFS)</a></th>
+            <th style="max-width: 550px;"><?php readfile("/var/www/projects/f21-13/html/files/p6-disk-input-fcfs.txt"); ?> </th>
+            <th><span style="color: green;">fcfs:</span> <?php readfile("/var/www/projects/f21-13/html/files/p6-disk-output-fcfs.txt"); ?></th>
         </tr>
     </tbody>
 </table>

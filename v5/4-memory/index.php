@@ -60,7 +60,7 @@
     </div> -->
     <div class="d-flex align-items-center justify-content-center"
         style="max-width: 300px; align-items: center; margin: 0 auto;">
-        <button id="rndData" type="button" class="btn btn-secondary">Ramdomized Data</button>
+        <button id="rndData" type="button" class="btn btn-secondary">Randomized Data</button>
     </div>
     <br>
     <div class="d-flex align-items-center justify-content-center">

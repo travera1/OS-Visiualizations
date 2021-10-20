@@ -164,7 +164,7 @@
                 rawFile.send(null);
                 console.log(procHandler);
             }
-            readInputTextFile("../../files/CPU.txt");
+            readInputTextFile("../../files/p1-cpu-input.txt");
             console.log(procHandler);
 
             var numberOfProcesses = procHandler.length;
@@ -231,7 +231,7 @@
             function fcfs(){
                 sorted = [];
                 sortedLine = [];
-                readOutputTextFile("FCFS/output.txt");
+                readOutputTextFile("../../files/p1-cpu-output-fcfs.txt");
                 console.log(sorted);
                 var slice = document.getElementById("slice");
                 if(slice != null)
@@ -242,9 +242,9 @@
                 sorted = [];
                 sortedLine = [];
                 if(preemptive == false)
-                    readOutputTextFile("SJF/NONPREEMPTIVE/output.txt");
+                    readOutputTextFile("../../files/p1-cpu-output-sjf.txt");
                 else if (preemptive == true)
-                    readOutputTextFile("SJF/PREEMPTIVE/output.txt");
+                    readOutputTextFile("../../files/p1-cpu-output-sjf-p.txt");
                 console.log(sorted);
                 var slice = document.getElementById("slice");
                 if(slice != null)
@@ -255,9 +255,9 @@
                 sorted = [];
                 sortedLine = [];
                 if(preemptive == false)
-                    readOutputTextFile("PRIORITY/NONPREEMPTIVE/output.txt");
+                    readOutputTextFile("../../files/p1-cpu-output-priority.txt");
                 else if (preemptive == true)
-                    readOutputTextFile("PRIORITY/PREEMPTIVE/output.txt");
+                    readOutputTextFile("../../files/p1-cpu-output-priority-p.txt");
                 console.log(sorted);
                 var slice = document.getElementById("slice");
                 if(slice != null)
@@ -272,7 +272,7 @@
                 var spot = document.getElementById("timeSlice");
                 spot.appendChild(slice);
                 slice.innerText = "Time Slice: 4";
-                readOutputTextFile("RR/output.txt");
+                readOutputTextFile("../../files/p1-cpu-output-roundrobin.txt");
                 console.log(sorted);
             }
 

@@ -256,8 +256,8 @@ function Reset(){
 
 function FCFS(){
     resetTextReader();
-    readInputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/FCFS/input.txt");
-    readOutputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/FCFS/output.txt");
+    readInputTextFile("../../files/p6-disk-input-fcfs.txt");
+    readOutputTextFile("../../files/p6-disk-output-fcfs.txt");
     document.getElementById("algorithm-name").innerHTML = "FCFS (First Come First Serve)";
     document.getElementById("the-queue").innerHTML = initalValues;
     document.getElementById("the-head").innerHTML = head;
@@ -268,8 +268,8 @@ function FCFS(){
 
 function SSTF(){
     resetTextReader(); 
-    readInputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/SSTF/input.txt");
-    readOutputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/SSTF/output.txt");
+    readInputTextFile("../../files/p6-disk-input-clooklooksstf.txt");
+    readOutputTextFile("../../files/p6-disk-output-sstf.txt");
     document.getElementById("algorithm-name").innerHTML = " SSTF (Shortest Seek Time First)";
     document.getElementById("the-queue").innerHTML = initalValues;
     document.getElementById("the-head").innerHTML = head;
@@ -277,8 +277,8 @@ function SSTF(){
 
 function CSCAN(){
     resetTextReader();
-    readInputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/CSCAN/input.txt");
-    readOutputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/CSCAN/output.txt");
+    readInputTextFile("../../files/p6-disk-input-cscan.txt");
+    readOutputTextFile("../../files/p6-disk-output-cscan.txt");
     document.getElementById("algorithm-name").innerHTML = "CSCAN";
     document.getElementById("the-queue").innerHTML = initalValues;
     document.getElementById("the-head").innerHTML = head;
@@ -286,8 +286,8 @@ function CSCAN(){
 
 function LOOK(){
     resetTextReader();
-    readInputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/LOOK/input.txt");
-    readOutputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/LOOK/output.txt");
+    readInputTextFile("../../files/p6-disk-input-clooklooksstf.txt");
+    readOutputTextFile("../../files/p6-disk-output-look.txt");
     document.getElementById("algorithm-name").innerHTML = "LOOK";
     document.getElementById("the-queue").innerHTML = initalValues;
     document.getElementById("the-head").innerHTML = head;
@@ -295,8 +295,8 @@ function LOOK(){
 
 function CLOOK(){
     resetTextReader();
-    readInputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/CLOOK/input.txt");
-    readOutputTextFile("http://cs.newpaltz.edu/p/s21-06/files/Algorithms/CLOOK/output.txt");
+    readInputTextFile("../../files/p6-disk-input-clooklooksstf.txt");
+    readOutputTextFile("../../files/p6-disk-output-clook.txt");
     document.getElementById("algorithm-name").innerHTML = "CLOOK";
     document.getElementById("the-queue").innerHTML = initalValues;
     document.getElementById("the-head").innerHTML = head;

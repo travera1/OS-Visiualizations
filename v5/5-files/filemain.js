@@ -106,7 +106,7 @@ $(document).ready(function () {
         $.ajax({
             async: true,   // this will solve the problem
             type: "GET",
-            url: "../../files/contin.txt",
+            url: "../../files/p5-file-input-continuous.txt",
             dataType: "text",
             success: function (res) {
                 console.log(res);
@@ -138,7 +138,7 @@ $(document).ready(function () {
         $.ajax({
             async: true,   // this will solve the problem
             type: "GET",
-            url: "../../files/link.txt",
+            url: "../../files/p5-file-input-linked.txt",
             dataType: "text",
             success: function (res) {
                 console.log(res);
@@ -170,7 +170,7 @@ $(document).ready(function () {
         $.ajax({
             async: true,   // this will solve the problem
             type: "GET",
-            url: "../../files/index.txt",
+            url: "../../files/p5-file-input-indexed.txt",
             dataType: "text",
             success: function (res) {
                 console.log(res);

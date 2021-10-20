@@ -20,7 +20,7 @@ class FCFS
         ArrayList <Integer> arrlist= new ArrayList<Integer>();
         int x = 0; 
          try {
-          File myObj = new File("../../../files/FCFS.txt");
+          File myObj = new File("../../../files/p6-disk-input-fcfs.txt");
           Scanner Scan = new Scanner(myObj);
           
           while (Scan.hasNext()) 

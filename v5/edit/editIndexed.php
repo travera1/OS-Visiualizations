@@ -1,15 +1,23 @@
 <?php 
       
       if(isset($_POST['submit'])){
-        if(empty($_POST['data'])){
+        if(empty($_POST['input'])){
         } else {
-            $filename="../../files/index.txt";
-            $newData = $_POST['data'];
+            $filename="../../files/p5-file-input-indexed.txt";
+            $newData = $_POST['input'];
             file_put_contents($filename, $newData);
-            echo 'successful file data change';
-            header('Location: ../view.php');
+           
+            
         }
-       // echo 'no data added successfully';
+        if(empty($_POST['output'])){
+        } else {
+            $filename="../../files/p5-file-output.txt";
+            $newData = $_POST['output'];
+            file_put_contents($filename, $newData);
+        }
+        
+        header('Location: ../view.php');
+       
       }
       
     ?>
@@ -30,26 +38,22 @@
     <?php 
         //include '/var/www/p/f21-13/html/templates/navbar.php'; 
         include '../../templates/navbar.php'; 
-         $data = file_get_contents("/var/www/projects/f21-13/html/files/index.txt");?>
+        $output = file_get_contents("/var/www/projects/f21-13/html/files/p5-file-output.txt");
+        $input = file_get_contents("/var/www/projects/f21-13/html/files/p5-file-input-indexed.txt");?>
+        
     
-    <div class="section">
-        <div class="block">
-            <div class="columns">
-                <div class="column is-one-fifth">
-                    <p><strong>Example Data:</strong> </p>
-                </div>
-                <div class="column is-four-fifths">
-                    <p class="has-text-grey-dark">
-                    <?php echo htmlentities($data);?>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="block">
+    <div class="section" style="display: inline;" >
+        <div>
             <form action="editIndexed.php" method="POST">
-                <div class="field" style="max-width: 600px;">
-                    <textarea name="data" id="" cols="8" rows="10" class="textarea"
-                    ><?php echo htmlentities($data);?></textarea>
+                <div>
+                    <div class="field" style="max-width: 500px;">
+                        <label for="input"><span><strong>Input: (Example Data: </strong></span> <?php echo htmlentities($input);?><span><strong> )</strong></span></label>
+                        <textarea name="input" id="input" cols="10" rows="10" class="textarea"><?php echo htmlentities($input); ?></textarea>
+                    </div>
+                    <div class="field" style="max-width: 500px;">
+                        <label for="output">Output Indexed:</label>
+                        <textarea name="output" id="output" cols="10" rows="10" class="textarea"><?php echo htmlentities($output); ?></textarea>
+                    </div>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">
@@ -59,7 +63,7 @@
                 </div>
             </form> 
         </div>
-    </div>   
+    </div>         
 
 </body>
 </html>
